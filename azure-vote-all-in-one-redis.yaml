@@ -48,7 +48,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: microsoft/azure-vote-front:v1
+        image: iaks/azure-voting-app:v1-alpine
         ports:
         - containerPort: 80
         resources:
@@ -59,6 +59,12 @@ spec:
         env:
         - name: REDIS
           value: "azure-vote-back"
+        - name: VOTE1VALUE
+          value: "Chocolate"
+        - name: VOTE2VALUE
+          value: "Peanut Butter"
+        - name: TITLE
+          value: "IAKS Voting App"
 ---
 apiVersion: v1
 kind: Service
